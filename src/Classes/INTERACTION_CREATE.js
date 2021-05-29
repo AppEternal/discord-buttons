@@ -26,7 +26,7 @@ class ButtonEvent {
 
         if (this.guild) {
             this.clicker.member = this.guild.members.resolve(data.member.user.id);
-            this.clicker.user = this.client.users.resolve(data.member.user.id);
+            this.clicker.user = this.client.users.resolve(data.member.user.id) || data.member.user;;
         } else {
             this.clicker.user = this.client.users.resolve(data.user.id);
         }
